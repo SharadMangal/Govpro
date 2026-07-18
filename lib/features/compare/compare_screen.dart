@@ -530,7 +530,7 @@ class CompareScreen extends ConsumerWidget {
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
           decoration: BoxDecoration(
-            color: const Color(0xFFF5F0EB),
+            color: Theme.of(context).brightness == Brightness.dark ? const Color(0xFF334155) : const Color(0xFFF5F0EB),
             borderRadius: BorderRadius.circular(12),
           ),
           child: Text(
@@ -538,7 +538,7 @@ class CompareScreen extends ConsumerWidget {
             style: TextStyle(
               fontSize: 10,
               fontWeight: FontWeight.w800,
-              color: Colors.grey.shade600,
+              color: Theme.of(context).brightness == Brightness.dark ? Colors.grey.shade400 : Colors.grey.shade600,
               letterSpacing: 0.5,
             ),
           ),
