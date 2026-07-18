@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:device_preview/device_preview.dart';
 
 import 'app/theme.dart';
 import 'app/router.dart';
@@ -10,8 +12,11 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   
   runApp(
-    const ProviderScope(
-      child: GovProApp(),
+    DevicePreview(
+      enabled: kIsWeb,
+      builder: (context) => const ProviderScope(
+        child: GovProApp(),
+      ),
     ),
   );
 }
@@ -26,6 +31,10 @@ class GovProApp extends ConsumerWidget {
     return MaterialApp.router(
       title: 'GovPro Monitoring Console',
       debugShowCheckedModeBanner: false,
+      
+      // Device preview settings
+      builder: DevicePreview.appBuilder,
+      locale: DevicePreview.locale(context),
       
       // Theme settings
       theme: AppTheme.lightTheme,
