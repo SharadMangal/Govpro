@@ -135,11 +135,11 @@ class AnalyticsScreen extends ConsumerWidget {
               child: Container(
                 width: 44,
                 height: 44,
-                decoration: const BoxDecoration(
-                  color: AppTheme.bellBg,
+                decoration: BoxDecoration(
+                  color: Theme.of(context).brightness == Brightness.dark ? const Color(0xFF334155) : AppTheme.bellBg,
                   shape: BoxShape.circle,
                 ),
-                child: const Icon(Icons.calendar_month, size: 20, color: AppTheme.primaryTeal),
+                child: Icon(Icons.calendar_month, size: 20, color: Theme.of(context).brightness == Brightness.dark ? Colors.white : AppTheme.primaryTeal),
               ),
             ),
             const SizedBox(width: 12),
@@ -148,7 +148,7 @@ class AnalyticsScreen extends ConsumerWidget {
               width: 44,
               height: 44,
               decoration: BoxDecoration(
-                color: AppTheme.bellBg,
+                color: Theme.of(context).brightness == Brightness.dark ? const Color(0xFF334155) : AppTheme.bellBg,
                 shape: BoxShape.circle,
               ),
               child: Stack(

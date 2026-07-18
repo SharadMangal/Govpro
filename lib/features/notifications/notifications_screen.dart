@@ -126,7 +126,7 @@ class NotificationsScreen extends ConsumerWidget {
           width: 44,
           height: 44,
           decoration: BoxDecoration(
-            color: AppTheme.bellBg,
+            color: Theme.of(context).brightness == Brightness.dark ? const Color(0xFF334155) : AppTheme.bellBg,
             shape: BoxShape.circle,
           ),
           child: Stack(

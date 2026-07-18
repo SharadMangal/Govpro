@@ -118,8 +118,8 @@ class AuthorityPerformanceScreen extends ConsumerWidget {
       child: Container(
         width: 44,
         height: 44,
-        decoration: const BoxDecoration(
-          color: AppTheme.bellBg,
+        decoration: BoxDecoration(
+          color: Theme.of(context).brightness == Brightness.dark ? const Color(0xFF334155) : AppTheme.bellBg,
           shape: BoxShape.circle,
         ),
         child: Stack(
